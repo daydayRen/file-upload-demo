@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.com.intasect</groupId>
+        <artifactId>gtmc-pd-comm-srv-multiple-file</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>gtmc-pd-comm-srv-multiple-file-test</artifactId>
+    <description>gtmc-pd-comm-srv-multiple-file-test</description>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- 文件服务 -->
+        <dependency>
+            <groupId>cn.com.intasect</groupId>
+            <artifactId>gtmc-pd-comm-srv-multiple-file-starter</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!-- 文件服务 -->
+        <dependency>
+            <groupId>cn.com.intasect</groupId>
+            <artifactId>gtmc-pd-comm-srv-multiple-file-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!-- 参数配置 -->
+        <dependency>
+            <groupId>cn.com.intasect</groupId>
+            <artifactId>gtmc-pd-comm-parameter-starter</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!-- 参数配置 -->
+        <dependency>
+            <groupId>cn.com.intasect</groupId>
+            <artifactId>gtmc-pd-comm-parameter-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.23</version>
+        </dependency>
+
+    </dependencies>
+
+
+
+</project>

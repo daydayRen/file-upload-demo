@@ -1,0 +1,1 @@
+package cn.com.intasect.multiple.file.starter.properties;

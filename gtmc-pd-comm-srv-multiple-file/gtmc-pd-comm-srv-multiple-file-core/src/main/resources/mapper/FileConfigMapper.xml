@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.intasect.multiple.file.core.mapper.FileConfigMapper">
+
+    <!-- 获取文件-->
+    <select id="findFileConfigByBizCode" resultType="cn.com.intasect.multiple.file.core.entity.FileConfig">
+        SELECT
+            *
+        FROM
+            t_file_config t
+        where t.domain_code = #{fileConfig.domainCode}
+         AND t.subdomain_code = #{fileConfig.subdomainCode}
+         AND t.business_code = #{fileConfig.businessCode}
+         AND del_flag=0
+    </select>
+
+    <update id="updateDelFlagById">
+        UPDATE t_file_config
+        SET del_flag    = 1,
+            update_time = NOW()
+        WHERE id = #{configId}
+    </update>
+
+    <select id="save">
+
+        INSERT INTO t_file_config
+        (domain_code, domain_name, subdomain_code, subdomain_name, business_code, business_name, storage_service, bucket_name,
+         bucket_domain, file_directory, disabled, valid_start_time, valid_end_time, create_by, create_time, update_by, update_time, remark)
+        VALUES
+            (#{domainCode}, #{domainName}, #{subdomainCode}, #{subdomainName}, #{businessCode}, #{businessName}, #{storageService},
+             #{bucketName}, #{bucketDomain}, #{fileDirectory}, #{disabled}, #{validStartTime}, #{validEndTime}, #{createBy}, now(),
+             #{updateBy}, now(), #{remark})
+
+    </select>
+</mapper>

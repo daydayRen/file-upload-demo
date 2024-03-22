@@ -1,0 +1,51 @@
+server:
+  port: 8081
+isct:
+  common:
+    fs:
+      # 默认：common-multiple-fs-service
+      service-name: infra-pd-commmultifunc
+      # 是否使用缓存
+      cache-enable: true
+      switchFileWay: "FTP"  # OBS  FTP
+    ftp:
+      config:
+        host: 192.168.139.116
+        username: root
+        password: root
+        win-ftp: true
+        work-directory: /
+      pool:
+        pool-min-idle: 2
+  datasource:
+    comm-fs: master
+
+
+huawei:
+  obs:
+    ak: JMDZRRDEYN9MVRCENBGH
+    sk: tXLYmYMmgCXhQaX9LAZrRyEWfjKdwaQ0ANL7ED1k
+    endPoint: https://obs.cn-south-1.myhuaweicloud.com # 测试使用
+
+
+spring:
+  datasource:
+    dynamic:
+      datasource:
+        master:
+          url: jdbc:mysql://localhost:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai
+          username: root
+          password: root
+          driver-class-name: com.mysql.cj.jdbc.Driver
+        slave_1:
+          url: jdbc:mysql://localhost:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai
+          username: root
+          password: root
+          driver-class-name: com.mysql.cj.jdbc.Driver
+logging:
+  level:
+    root: info
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
