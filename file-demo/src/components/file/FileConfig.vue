@@ -133,7 +133,7 @@
           <el-table-column prop="businessName" label="文件业务名称" width="120"></el-table-column>
           <el-table-column label="存储介质" width="100%" key="slot">
             <template #default="scope">
-              {{ scope.row.storageService === 1 ? 'OBS' : 'FTP' }}
+              {{ scope.row.storageService === 1 ? 'OBS' : scope.row.storageService === 2 ? 'FTP' : '' }}
             </template>
           </el-table-column>
           <el-table-column prop="bucketName" label="桶名称" width="120"></el-table-column>
@@ -218,10 +218,10 @@ export default {
       },
       configList: [],
       options: [{
-        value: '2',
+        value: 2,
         label: 'FTP'
       }, {
-        value: '1',
+        value: 1,
         label: 'OBS'
       }],
     }

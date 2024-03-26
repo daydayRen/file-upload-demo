@@ -50,7 +50,14 @@
         <el-col :span="8">
           <div class="grid-content bg-purple"></div>
           <el-form-item label="存储介质">
-            <el-input v-model="formData.storageService" type="number" placeholder="请输入数字 1:OBS 2:FTP"></el-input>
+            <el-select v-model="formData.storageService" placeholder="请选择">
+              <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+              </el-option>
+            </el-select>
           </el-form-item>
         </el-col>
         <el-col :span="8">
@@ -127,7 +134,15 @@ export default {
   data() {
     return {
       formData: {},
+      options: [{
+        value: 2,
+        label: 'FTP'
+      }, {
+        value: 1,
+        label: 'OBS'
+      }]
     };
+
   },
   methods: {
     cancelModal() {
