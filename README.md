@@ -2,13 +2,15 @@
 
 
 ### 存在问题：
-	存在不同用户使用不同文件服务器，需要各自搭建不同的文件操作，例如OBS、FTP等等，但是功能却都是上传、下载、删除等操作!那么是不是可以使用一种通用得方式实现上传、下载、删除呢？答案是可以得！
+存在不同用户使用不同文件服务器，需要各自搭建不同的文件操作，例如OBS、FTP等等，但是功能却都是上传、下载、删除等操作!那么是不是可以使用一种通用得方式实现上传、下载、删除呢？答案是可以得！
 ### 解决:
-	文件得操作我们统一路径，但是在具体得操作上，根据不同的配置去实现真正的操作，本此使用@ConditionalOnProperty注解(下面会讲到)；根据配置了哪种操作方式调用对用得方法！对应得类图如下
+文件得操作我们统一路径，但是在具体得操作上，根据不同的配置去实现真正的操作，本此使用@ConditionalOnProperty注解(下面会讲到)；根据配置了哪种操作方式调用对用得方法！对应得类图如下
 
- <img src="https://github.com/daydayRen/file-upload-demo/blob/main/file/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%B1%BB%E5%9B%BE.png"></img>
-	
+<div>
+ <img src="https://github.com/daydayRen/file-upload-demo/blob/main/file/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%B1%BB%E5%9B%BE.png" width="300" height="400"></img>
+</div>
 
+效果
 
 ### 文件服务配置说明
 
